@@ -1,0 +1,298 @@
+/**
+ * Page Categorizer – Rate Notice Styles
+ *
+ * @package page-categorizer
+ * @since   1.5.0
+ */
+
+.pagecate-notice {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	background: #fff;
+	border: 1px solid #e2e4e7;
+	border-radius: 8px;
+	border-left: none;
+	padding: 24px 28px;
+	margin: 8px 0 16px;
+	box-shadow: 0 2px 8px rgba( 0, 0, 0, .06 );
+	overflow: hidden;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Decorative background pattern — subtle geometric shapes like Copy & Delete */
+.pagecate-notice::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image:
+		radial-gradient( circle at 92% 20%, rgba( 240, 180, 41, .08 ) 0%, transparent 50% ),
+		radial-gradient( circle at 85% 80%, rgba( 45, 162, 112, .06 ) 0%, transparent 40% );
+	pointer-events: none;
+}
+
+/* ── Illustration area ─────────────────────────────────────────── */
+.pagecate-notice-illustration {
+	position: relative;
+	flex-shrink: 0;
+	width: 90px;
+	height: 90px;
+}
+
+.pagecate-notice-illustration .pagecate-circle {
+	width: 90px;
+	height: 90px;
+	background: #f7f8f9;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 46px;
+	line-height: 1;
+}
+
+/* Small decorative accents */
+.pagecate-notice-illustration .pagecate-accent {
+	position: absolute;
+	border-radius: 50%;
+}
+.pagecate-notice-illustration .pagecate-accent-1 {
+	width: 12px;
+	height: 12px;
+	background: #f0b429;
+	top: 2px;
+	right: 4px;
+	border-radius: 3px;
+	transform: rotate( 12deg );
+}
+.pagecate-notice-illustration .pagecate-accent-2 {
+	width: 8px;
+	height: 8px;
+	background: #2da270;
+	bottom: 6px;
+	left: 2px;
+	border-radius: 50%;
+}
+.pagecate-notice-illustration .pagecate-accent-3 {
+	width: 6px;
+	height: 6px;
+	border: 2px solid #f0b429;
+	bottom: 14px;
+	right: 0;
+	border-radius: 50%;
+}
+
+/* ── Body ──────────────────────────────────────────────────────── */
+.pagecate-notice-body {
+	flex: 1;
+	min-width: 0;
+}
+
+.pagecate-notice-heading {
+	font-size: 14.5px;
+	font-weight: 600;
+	color: #1d2327;
+	margin: 0 0 6px;
+	line-height: 1.4;
+}
+
+.pagecate-notice-text {
+	font-size: 13.5px;
+	color: #50575e;
+	line-height: 1.6;
+	margin: 0 0 16px;
+}
+
+.pagecate-notice-text strong {
+	color: #1d2327;
+	font-weight: 600;
+}
+
+/* ── Actions ───────────────────────────────────────────────────── */
+.pagecate-notice-actions {
+	display: flex;
+	align-items: center;
+	gap: 0;
+	flex-wrap: wrap;
+}
+
+/* Primary CTA */
+.pagecate-notice .pagecate-btn-primary {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 8px 20px;
+	background: #2da270;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	text-decoration: none;
+	line-height: 1.4;
+	transition: background .15s, transform .1s;
+	margin-right: 20px;
+}
+.pagecate-notice .pagecate-btn-primary:hover {
+	background: #259060;
+	color: #fff;
+	text-decoration: none;
+}
+.pagecate-notice .pagecate-btn-primary:active {
+	transform: scale( .97 );
+}
+
+/* Text-link actions (like Copy & Delete's secondary options) */
+.pagecate-notice .pagecate-btn-link {
+	background: none;
+	border: none;
+	color: #8c8f94;
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 400;
+	cursor: pointer;
+	padding: 8px 14px;
+	text-decoration: none;
+	transition: color .15s;
+	line-height: 1.4;
+}
+.pagecate-notice .pagecate-btn-link:hover {
+	color: #1d2327;
+	text-decoration: none;
+}
+
+/* Divider between text-link actions */
+.pagecate-notice .pagecate-btn-link + .pagecate-btn-link {
+	border-left: 1px solid #e2e4e7;
+}
+
+/* ── Dismiss X ─────────────────────────────────────────────────── */
+.pagecate-notice-close {
+	position: absolute;
+	top: 12px;
+	right: 14px;
+	background: none;
+	border: none;
+	color: #c3c4c7;
+	font-size: 16px;
+	line-height: 1;
+	cursor: pointer;
+	padding: 4px 6px;
+	border-radius: 3px;
+	transition: color .15s, background .15s;
+}
+.pagecate-notice-close:hover {
+	color: #50575e;
+	background: #f6f7f7;
+}
+
+/* ── Responsive ────────────────────────────────────────────────── */
+
+/* Tablet: shrink illustration slightly, tighten padding */
+@media screen and ( max-width: 782px ) {
+	.pagecate-notice {
+		padding: 20px 40px 20px 20px;
+		gap: 16px;
+	}
+
+	.pagecate-notice-illustration {
+		width: 70px;
+		height: 70px;
+	}
+
+	.pagecate-notice-illustration .pagecate-circle {
+		width: 70px;
+		height: 70px;
+		font-size: 36px;
+	}
+
+	.pagecate-notice-heading {
+		font-size: 13.5px;
+	}
+
+	.pagecate-notice-text {
+		font-size: 13px;
+		margin-bottom: 12px;
+	}
+}
+
+/* Mobile: stack illustration above body */
+@media screen and ( max-width: 600px ) {
+	.pagecate-notice {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+		padding: 20px 40px 16px 16px;
+	}
+
+	.pagecate-notice-illustration {
+		width: 56px;
+		height: 56px;
+	}
+
+	.pagecate-notice-illustration .pagecate-circle {
+		width: 56px;
+		height: 56px;
+		font-size: 28px;
+	}
+
+	.pagecate-notice-illustration .pagecate-accent-1 {
+		width: 9px;
+		height: 9px;
+		top: 0;
+		right: 2px;
+	}
+	.pagecate-notice-illustration .pagecate-accent-2 {
+		width: 6px;
+		height: 6px;
+		bottom: 4px;
+		left: 0;
+	}
+	.pagecate-notice-illustration .pagecate-accent-3 {
+		width: 5px;
+		height: 5px;
+		bottom: 10px;
+		right: -2px;
+	}
+
+	.pagecate-notice-body {
+		width: 100%;
+	}
+
+	.pagecate-notice-heading {
+		font-size: 13.5px;
+		padding-right: 8px;
+	}
+
+	.pagecate-notice-text {
+		font-size: 13px;
+		margin-bottom: 14px;
+	}
+
+	/* Stack actions vertically */
+	.pagecate-notice-actions {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 4px;
+	}
+
+	.pagecate-notice .pagecate-btn-primary {
+		width: 100%;
+		justify-content: center;
+		margin-right: 0;
+		margin-bottom: 4px;
+		padding: 9px 16px;
+	}
+
+	/* Remove divider between text-link buttons when stacked */
+	.pagecate-notice .pagecate-btn-link {
+		padding: 6px 0;
+	}
+	.pagecate-notice .pagecate-btn-link + .pagecate-btn-link {
+		border-left: none;
+		padding-left: 0;
+	}
+}
